@@ -11,7 +11,7 @@ services:
             dockerfile: dockerfile
             context: ./
         entrypoint:
-            echo "test_api.py"
+            python main.py
         ports:
             - '8000:8000'
 
