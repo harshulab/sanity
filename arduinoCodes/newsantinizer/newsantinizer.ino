@@ -1,10 +1,9 @@
-
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
 
-String serverName = "http://172.31.3.237:8000/home";
+String serverName = "http://192.168.1.104:8000/home";
 const char* ssid = "TU";
 const char* password = "tu@inet1";
 
@@ -13,8 +12,7 @@ const int echoPin =12;
 const int pingPin2=4;
 const int echoPin2=0;
 const int led=13;
-const int indicator =  5;
-;  // relay output
+const int indicator =  5;  // relay output
 int hand_counter = 1 ;
 int email_trigger = 0;  //not set initialy
 void setup() {
@@ -51,10 +49,10 @@ void loop() {
    Serial.println();
    delay(100);
    
-   if(hand_distance<25 && depth<=27)        //and because we only want to spray when tank is full
+   if(hand_distance<25 && depth<=30)        //and because we only want to spray when tank is full
    
    {
-      if (depth<=27){  
+      if (depth<=30){  
          email_trigger = 0 ;             //reset email trigger flag to initial state
       }
     if (hand_counter <1){                //spray sequence nozel on
@@ -62,7 +60,7 @@ void loop() {
     digitalWrite(indicator,HIGH);
     digitalWrite(LED_BUILTIN,LOW);
     Serial.println("Relay on");
-    delay(500);
+    delay(2000);
     hand_counter++;  
     digitalWrite(pingPin,LOW);
     digitalWrite(pingPin2,LOW);
@@ -82,7 +80,7 @@ void loop() {
      digitalWrite(led,LOW);
      hand_counter = 0;                   //reset hand_counter flag so that in next loop it can trigger the nozel
     //condition for hand distance
-   if (depth>27 && email_trigger == 0){           //send email only when hand is not placed, tank is empty and its first time that conditions are met
+   if (depth>30 && email_trigger == 0){           //send email only when hand is not placed, tank is empty and its first time that conditions are met
       //change threshold for minimum depth
       Serial.println( wifi_http( ));
      
