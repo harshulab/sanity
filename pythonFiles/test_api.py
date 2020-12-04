@@ -1,9 +1,11 @@
 import flask
-
+import os
 import smtplib
 
 
-SENDER_UNAME= 'sanitizerstation2@gmail.com'
+SENDER_UNAME= os.getenv('USR_NAME')
+SENDER_PASS = os.getenv('PASS')
+
 RECIPIENTS_ = "avnoorsingh488@gmail.com"
 subject = 'SANITATION STATION ALERT!!!'
 CC='chiyabansal@gmail.com'
@@ -13,7 +15,7 @@ email_text = "From: {0} \nTo: {1} \nCC:{2}Subject: {3} \n\n {4}".format(SENDER_U
                                                                                   subject, body)
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465) 
 server.ehlo()
-server.login(SENDER_UNAME, 'avnoor123')
+server.login(SENDER_UNAME, SENDER_PASS)
 #server.sendmail(SENDER_UNAME ,     RECIPIENTS_,        email_text)
                 #sender             #reciever         #email text
 app = flask.Flask(__name__)
