@@ -13,6 +13,9 @@ services:
             context: ./
         entrypoint:
             python test_api.py
+        enviroment:
+            - USR_NAME
+            - PASS
             
         ports:
             - '8000:8000'
