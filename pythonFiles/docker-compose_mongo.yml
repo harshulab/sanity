@@ -1,0 +1,21 @@
+version: '2'
+#this file is only for archiving in git, do not run
+services:
+  mongodbserver:
+    image: andresvidal/rpi3-mongodb3
+    restart: always
+    mem_limit: 419m
+    stdin_open: true
+    logging:
+      options:
+        max-size: 148m
+
+    volumes:
+      - /data/db:/data/db
+    tty: true
+    ports:
+      - 27017:27017/tcp
+    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: example
+       wiredTigerCacheSizeGB: .5
