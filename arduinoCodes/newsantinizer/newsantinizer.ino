@@ -5,16 +5,15 @@
 
 
 String serverName = "http://172.31.3.237:8000/home";
-const char* ssid = "Jon snow";
-const char* password = "ceasaze00489";
+const char* ssid = "TU";
+const char* password = "tu@inet1";
 
 const int pingPin =14;    // trigo pin
 const int echoPin =12;
 const int pingPin2=4;
 const int echoPin2=0;
 const int led=13;
-const int indicator =  5;
-;  // relay output
+const int indicator =  5;  // relay output
 int hand_counter = 1 ;
 int email_trigger = 0;  //not set initialy
 void setup() {
@@ -60,7 +59,7 @@ void loop() {
       }
     if (hand_counter <1){                //spray sequence nozel on
    
-    digitalWrite(indicator,LOW);
+    digitalWrite(indicator,LOW);         //relay is working on active low condition so ,low to trigger the relay
     digitalWrite(LED_BUILTIN,LOW);
     Serial.println("Relay on");
     delay(1000);
@@ -72,7 +71,7 @@ void loop() {
    }
    
    else{                                 // let the nozel turned off
-     digitalWrite(indicator,HIGH);
+     digitalWrite(indicator,HIGH);       //turned it HIGH for making low
      digitalWrite(led,LOW);
      
     }
