@@ -1,18 +1,20 @@
+
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
 
-String serverName = "http://192.168.1.104:8000/3";
-const char* ssid = "TU";
-const char* password = "tu@inet1";
+String serverName = "http://172.31.3.237:8000/home";
+const char* ssid = "Jon snow";
+const char* password = "ceasaze00489";
 
 const int pingPin =14;    // trigo pin
 const int echoPin =12;
 const int pingPin2=4;
 const int echoPin2=0;
 const int led=13;
-const int indicator =  5;  // relay output
+const int indicator =  5;
+;  // relay output
 int hand_counter = 1 ;
 int email_trigger = 0;  //not set initialy
 void setup() {
@@ -32,6 +34,7 @@ void setup() {
   Serial.println(WiFi.localIP());
  
   Serial.println("Timer set to 5 seconds (timerDelay variable), it will take 5 seconds before publishing the first reading.");
+  
 }
 
 
@@ -49,18 +52,18 @@ void loop() {
    Serial.println();
    delay(100);
    
-   if(hand_distance<25 && depth<=30)        //and because we only want to spray when tank is full
+   if(hand_distance<25 && depth<=27)        //and because we only want to spray when tank is full
    
    {
-      if (depth<=30){  
+      if (depth<=27){  
          email_trigger = 0 ;             //reset email trigger flag to initial state
       }
     if (hand_counter <1){                //spray sequence nozel on
    
-    digitalWrite(indicator,HIGH);
+    digitalWrite(indicator,LOW);
     digitalWrite(LED_BUILTIN,LOW);
     Serial.println("Relay on");
-    delay(2000);
+    delay(1000);
     hand_counter++;  
     digitalWrite(pingPin,LOW);
     digitalWrite(pingPin2,LOW);
@@ -69,18 +72,18 @@ void loop() {
    }
    
    else{                                 // let the nozel turned off
-     digitalWrite(indicator,LOW);
+     digitalWrite(indicator,HIGH);
      digitalWrite(led,LOW);
      
     }
    }
    else {                                // if tank is empty or hand is not placed
     delay(10);
-    digitalWrite(indicator,LOW);         //turn spray off
+    digitalWrite(indicator,HIGH);         //turn spray off
      digitalWrite(led,LOW);
      hand_counter = 0;                   //reset hand_counter flag so that in next loop it can trigger the nozel
     //condition for hand distance
-   if (depth>30 && email_trigger == 0){           //send email only when hand is not placed, tank is empty and its first time that conditions are met
+   if (depth>27 && email_trigger == 0){           //send email only when hand is not placed, tank is empty and its first time that conditions are met
       //change threshold for minimum depth
       Serial.println( wifi_http( ));
      
