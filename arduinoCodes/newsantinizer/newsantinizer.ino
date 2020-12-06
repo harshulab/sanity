@@ -3,7 +3,7 @@
 #include <WiFiClient.h>
 
 
-String serverName = "http://192.168.1.104:8000/home";
+String serverName = "http://192.168.1.104:8000/3";
 const char* ssid = "TU";
 const char* password = "tu@inet1";
 
