@@ -17,12 +17,14 @@ const int indicator =  5;  // relay output
 int hand_counter = 1 ;
 int email_trigger = 0;  //not set initialy
 void setup() {
+  WiFi.begin(ssid, password);
+  
+  
   pinMode(LED_BUILTIN,OUTPUT);
   pinMode(indicator,OUTPUT);
- 
   Serial.begin(115200);
 
-  WiFi.begin(ssid, password);
+  
   Serial.println("Connecting");
   while(WiFi.status() != WL_CONNECTED) {
     delay(500);
