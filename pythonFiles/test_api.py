@@ -1,33 +1,34 @@
-import flask
+from flask import Flask
+from flask_mail import Mail, Message
+from os import environ
 import os
-import smtplib
+
+Recipients=os.environ.get('RECIPIENTS')
+Sender=os.environ.get('MAIL_USERNAME')
+Pass=os.environ.get('MAIL_PASSWORD')
+
+print(Sender)
+print(Pass)
+
+app =Flask(__name__)
+mail=Mail(app)
 
 
-SENDER_UNAME= os.getenv('USR_NAME')
-SENDER_PASS = os.getenv('PASS')
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME']=Sender
+app.config['MAIL_PASSWORD']=Pass
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
-RECIPIENTS_ = "avnoorsingh488@gmail.com"
-subject = 'SANITATION STATION ALERT!!!'
-CC='chiyabansal@gmail.com'
-body= 'Directorate Office Tank Is Running Empty \n  Please refill the tank'
-
-email_text = "From: {0} \nTo: {1} \nCC:{2}Subject: {3} \n\n {4}".format(SENDER_UNAME, RECIPIENTS_,CC,
-                                                                                  subject, body)
-server = smtplib.SMTP_SSL('smtp.gmail.com', 465) 
-server.ehlo()
-server.login(SENDER_UNAME, SENDER_PASS)
-#server.sendmail(SENDER_UNAME ,     RECIPIENTS_,        email_text)
-                #sender             #reciever         #email text
-app = flask.Flask(__name__)
-app.config["DEBUG"] = True
-print('red -----------------------------------------')
-
-@app.route('/home', methods=['GET'])
-def home():
-    print('something happened')
-    server.sendmail(SENDER_UNAME ,     RECIPIENTS_,        email_text)
-
-    return "<h1>THIS IS RESPONSE FROM RASPBERRY PI -- Distant Reading Archive</h1><p>This site is a prototype API response for email trigger.</p>"
+@app.route("/1/<location>")
+def index(location):
+   msg = Message('ALERT FROM SANITIZER STATION !!', sender =Sender, recipients =[Recipients])
+   msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" %location
+   print(msg)
+   mail.send(msg)
+   return "Sent mail for machine from %s" %location
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port=8000)
+   app.run(host='0.0.0.0',port=8000,debug = True)
