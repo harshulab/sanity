@@ -14,8 +14,9 @@ services:
         entrypoint:
             python test_api.py
         enviroment:
-            - USR_NAME
-            - PASS
+            - MAIL_USERNAME
+            - MAIL_PASSWORD
+            - RECIPIENTS
             
         ports:
             - '8000:8000'
