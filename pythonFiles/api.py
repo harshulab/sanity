@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_mail import Mail, Message
-# from os import environ
+from os import environ
 import os
 
 Recipients = os.environ.get('RECIPIENTS')
@@ -177,4 +177,4 @@ def index17(location):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
