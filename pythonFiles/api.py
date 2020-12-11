@@ -23,7 +23,7 @@ app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 
-@app.route("/1/<location>")
+@app.route("/1/<location>",methods=['GET'])
 def index1(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -32,7 +32,7 @@ def index1(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/2/<location>")
+@app.route("/2/<location>",methods=['GET'])
 def index2(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -41,7 +41,7 @@ def index2(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/3/<location>")
+@app.route("/3/<location>",methods=['GET'])
 def index3(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -50,7 +50,7 @@ def index3(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/4/<location>")
+@app.route("/4/<location>",methods=['GET'])
 def index4(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -59,7 +59,7 @@ def index4(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/5/<location>")
+@app.route("/5/<location>",methods=['GET'])
 def index5(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -68,7 +68,7 @@ def index5(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/6/<location>")
+@app.route("/6/<location>",methods=['GET'])
 def index6(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -77,7 +77,7 @@ def index6(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/7/<location>")
+@app.route("/7/<location>",methods=['GET'])
 def index7(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -86,7 +86,7 @@ def index7(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/8/<location>")
+@app.route("/8/<location>",methods=['GET'])
 def index8(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -95,7 +95,7 @@ def index8(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/9/<location>")
+@app.route("/9/<location>",methods=['GET'])
 def index9(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -104,7 +104,7 @@ def index9(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/10/<location>")
+@app.route("/10/<location>",methods=['GET'])
 def index10(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -113,7 +113,7 @@ def index10(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/11/<location>")
+@app.route("/11/<location>",methods=['GET'])
 def index11(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -122,7 +122,7 @@ def index11(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/12/<location>")
+@app.route("/12/<location>",methods=['GET'])
 def index12(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -131,7 +131,7 @@ def index12(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/13/<location>")
+@app.route("/13/<location>",methods=['GET'])
 def index13(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -140,7 +140,7 @@ def index13(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/14/<location>")
+@app.route("/14/<location>",methods=['GET'])
 def index14(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -149,7 +149,7 @@ def index14(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/15/<location>")
+@app.route("/15/<location>",methods=['GET'])
 def index15(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -158,7 +158,7 @@ def index15(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/16/<location>")
+@app.route("/16/<location>",methods=['GET'])
 def index16(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
@@ -167,7 +167,7 @@ def index16(location):
     return "Sent mail for machine from %s" % location
 
 
-@app.route("/17/<location>")
+@app.route("/17/<location>",methods=['GET'])
 def index17(location):
     msg = Message('ALERT FROM SANITIZER STATION !!', sender=Sender, recipients=[Recipients])
     msg.body = "%s 's Sanitizer Machine is running empty,Kindly refill it !!" % location
