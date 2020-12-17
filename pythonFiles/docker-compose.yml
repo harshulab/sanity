@@ -12,11 +12,11 @@ services:
             dockerfile: dockerfile
             context: ./
         entrypoint:
-            python api.py
+            python test_api.py
         environment:
             - MAIL_USERNAME
             - MAIL_PASSWORD
             - RECIPIENTS
 
         ports:
-            - '5000:5000'
+            - '8000:8000'
