@@ -1,13 +1,13 @@
-{"_id":{"$oid":"5f942dbcdcc3daf45f8df2cd"},"Token":1.0,"Label":"LT101","Message":"The sanitiser station located in LT101 is empty. Please refill it."}
-{"_id":{"$oid":"5f942de3dcc3daf45f8df2ce"},"Token":2.0,"Label":"LT103","Message":"The sanitiser station located in LT103 is empty. Please refill it."}
-{"_id":{"$oid":"5f942e8adcc3daf45f8df2d1"},"Token":3.0,"Label":"LT202","Message":"The sanitiser station located in LT202 is empty. Please refill it."}
-{"_id":{"$oid":"5f942f1fdcc3daf45f8df2d2"},"Token":4.0,"Label":"LT206","Message":"The sanitiser station located in LT206 is empty. Please refill it."}
-{"_id":{"$oid":"5f942f36dcc3daf45f8df2d3"},"Token":5.0,"Label":"LT301","Message":"The sanitiser station located in LT301 is empty. Please refill it."}
+{"_id":{"$oid":"5f942dbcdcc3daf45f8df2cd"},"Token":1.0,"Label":"Directorate","Message":"The sanitiser station located in Directorate is empty. Please refill it."}
+{"_id":{"$oid":"5f942de3dcc3daf45f8df2ce"},"Token":2.0,"Label":"E-block","Message":"The sanitiser station located in E-block is empty. Please refill it."}
+{"_id":{"$oid":"5f942e8adcc3daf45f8df2d1"},"Token":3.0,"Label":"F-block","Message":"The sanitiser station located in F-Block is empty. Please refill it."}
+{"_id":{"$oid":"5f942f1fdcc3daf45f8df2d2"},"Token":4.0,"Label":"TAN","Message":"The sanitiser station located in TAN is empty. Please refill it."}
+{"_id":{"$oid":"5f942f36dcc3daf45f8df2d3"},"Token":5.0,"Label":"Ragistary","Message":"The sanitiser station located in Ragistary is empty. Please refill it."}
 {"_id":{"$oid":"5f942f45dcc3daf45f8df2d4"},"Token":6.0,"Label":"LT302","Message":"The sanitiser station located in LT302 is empty. Please refill it."}
 {"_id":{"$oid":"5f942f59dcc3daf45f8df2d5"},"Token":7.0,"Label":"LP103","Message":"The sanitiser station located in LP103 is empty. Please refill it."}
 {"_id":{"$oid":"5f942f69dcc3daf45f8df2d6"},"Token":8.0,"Label":"LP107","Message":"The sanitiser station located in LP107 is empty. Please refill it."}
 {"_id":{"$oid":"5f942f79dcc3daf45f8df2d7"},"Token":9.0,"Label":"LP110","Message":"The sanitiser station located in LP110 is empty. Please refill it."}
 {"_id":{"$oid":"5f942f9fdcc3daf45f8df2d8"},"Token":10.0,"Label":"Library","Message":"The sanitiser station located outside Library is empty. Please refill it."}
-{"_id":{"$oid":"5f942fc1dcc3daf45f8df2d9"},"Token":11.0,"Label":"Registrar Office","Message":"The sanitiser station located outside Registrar Office is empty. Please refill it."}
+{"_id":{"$oid":"5f942fc1dcc3daf45f8df2d9"},"Token":11.0,"Label":"LT-101 Office","Message":"The sanitiser station located outside Registrar Office is empty. Please refill it."}
 {"_id":{"$oid":"5f942fdcdcc3daf45f8df2da"},"Token":12.0,"Label":"CS Block","Message":"The sanitiser station located outside CS Block is empty. Please refill it."}
-{"_id":{"$oid":"5f942ff8dcc3daf45f8df2db"},"Token":13.0,"Label":"Directorate Office","Message":"The sanitiser station located in Directorate Office is empty. Please refill it."}
+{"_id":{"$oid":"5f942ff8dcc3daf45f8df2db"},"Token":13.0,"Label":"LT-201","Message":"The sanitiser station located in Directorate Office is empty. Please refill it."}
