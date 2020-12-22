@@ -4,7 +4,7 @@
 #include <WiFiClient.h>
 
 
-String serverName = "http://172.31.3.237:8000/home";
+String serverName = "http://172.31.3.237:8000/1/DIRECTORATE";
 const char* ssid = "TU";
 const char* password = "tu@inet1";
 
@@ -17,12 +17,11 @@ const int indicator =  5;  // relay output
 int hand_counter = 1 ;
 int email_trigger = 0;  //not set initialy
 void setup() {
+
+  Serial.begin(115200);
   WiFi.begin(ssid, password);
-  
-  
   pinMode(LED_BUILTIN,OUTPUT);
   pinMode(indicator,OUTPUT);
-  Serial.begin(115200);
 
   
   Serial.println("Connecting");
@@ -53,7 +52,7 @@ void loop() {
    Serial.println();
    delay(100);
    
-   if(hand_distance<25 && depth<=27)        //and because we only want to spray when tank is full
+   if(hand_distance<25 && depth<=23)        //and because we only want to spray when tank is full
    
    {
       if (depth<=27){  
@@ -64,7 +63,7 @@ void loop() {
     digitalWrite(indicator,LOW);         //relay is working on active low condition so ,low to trigger the relay
     digitalWrite(LED_BUILTIN,LOW);
     Serial.println("Relay on");
-    delay(1000);
+    delay(700);
     hand_counter++;  
     digitalWrite(pingPin,LOW);
     digitalWrite(pingPin2,LOW);
