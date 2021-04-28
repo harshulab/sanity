@@ -1,27 +1,27 @@
-
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
 
-String serverName = "http://172.31.3.237:8000/1/DIRECTORATE";
-const char* ssid = "TU";
-const char* password = "tu@inet1";
+String serverName = "http://172.31.3.237:8000/number/samplelocation";
+const char* ssid = "sampleid";
+const char* password = "samplepass";
 
-const int pingPin =14;    // trigo pin
+const int pingPin =14;    // trigo pin depth
 const int echoPin =12;
-const int pingPin2=4;
+const int pingPin2=4;     // tripgo pin hand
 const int echoPin2=0;
 const int led=13;
 const int indicator =  5;  // relay output
 int hand_counter = 1 ;
 int email_trigger = 0;  //not set initialy
 void setup() {
-
-  Serial.begin(115200);
   WiFi.begin(ssid, password);
+  
+  
   pinMode(LED_BUILTIN,OUTPUT);
   pinMode(indicator,OUTPUT);
+  Serial.begin(115200);
 
   
   Serial.println("Connecting");
@@ -52,10 +52,10 @@ void loop() {
    Serial.println();
    delay(100);
    
-   if(hand_distance<25 && depth<=23)        //and because we only want to spray when tank is full
+   if(hand_distance<25 && depth<=25)        //and because we only want to spray when tank is full
    
    {
-      if (depth<=27){  
+      if (depth<=25){  
          email_trigger = 0 ;             //reset email trigger flag to initial state
       }
     if (hand_counter <1){                //spray sequence nozel on
@@ -63,7 +63,7 @@ void loop() {
     digitalWrite(indicator,LOW);         //relay is working on active low condition so ,low to trigger the relay
     digitalWrite(LED_BUILTIN,LOW);
     Serial.println("Relay on");
-    delay(700);
+    delay(150);
     hand_counter++;  
     digitalWrite(pingPin,LOW);
     digitalWrite(pingPin2,LOW);
@@ -83,7 +83,7 @@ void loop() {
      digitalWrite(led,LOW);
      hand_counter = 0;                   //reset hand_counter flag so that in next loop it can trigger the nozel
     //condition for hand distance
-   if (depth>27 && email_trigger == 0){           //send email only when hand is not placed, tank is empty and its first time that conditions are met
+   if (depth>25 && email_trigger == 0){           //send email only when hand is not placed, tank is empty and its first time that conditions are met
       //change threshold for minimum depth
       Serial.println( wifi_http( ));
      
